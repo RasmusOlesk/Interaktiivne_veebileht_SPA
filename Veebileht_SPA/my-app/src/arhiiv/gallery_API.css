@@ -1,46 +1,67 @@
+/* MATRIX THEME — neon green glow, cyber distortion */
+
+.gallery-container {
+  perspective: 1200px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid #00ff41;
+  box-shadow: 0 0 20px #00ff41;
+}
+
+/* Base image styling */
 .image {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
 
-  transition: 
+  /* Matrix tint + glow */
+  filter: hue-rotate(90deg) brightness(1.3) contrast(1.1);
+
+  transition:
     transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
-    opacity 0.6s ease;
+    opacity 0.6s ease,
+    filter 0.4s ease;
 
-  will-change: transform, opacity;
+  will-change: transform, opacity, filter;
 }
 
-.gallery-container {
-  perspective: 1200px;
-  overflow: hidden;
-}
-
+/* ACTIVE — centered, glowing, sharp */
 .image.active {
   transform: translateX(0) scale(1) rotateY(0deg);
   z-index: 3;
   opacity: 1;
+  filter: hue-rotate(90deg) brightness(1.6);
+  box-shadow: 0 0 25px #00ff41;
 }
 
+/* PREVIOUS — left, tilted, dimmer */
 .image.prev {
   transform: translateX(-70%) scale(0.8) rotateY(45deg);
   z-index: 2;
   opacity: 0.6;
+  filter: hue-rotate(90deg) brightness(0.9) blur(1px);
 }
 
+/* NEXT — right, tilted, dimmer */
 .image.next {
   transform: translateX(70%) scale(0.8) rotateY(-45deg);
   z-index: 2;
   opacity: 0.6;
+  filter: hue-rotate(90deg) brightness(0.9) blur(1px);
 }
 
+/* HIDDEN — shrinks away like disappearing code */
 .image.hidden {
   transform: scale(0.5);
   opacity: 0;
+  filter: brightness(0.3) blur(3px);
 }
 
+/* 3D container */
 .gallery {
   position: relative;
   height: 400px;
   transform-style: preserve-3d;
+  background: radial-gradient(circle, #001900 0%, #000 80%);
 }

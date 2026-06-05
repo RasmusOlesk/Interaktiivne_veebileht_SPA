@@ -12,14 +12,14 @@ type GalleryProps = {
 };
 
 export const pictures: Picture [] = [  // Muutuja pilt mis kasutab type Pictures'i kui järjendit, mis võrdub järjendis olevad pildid
-    { id: 1, src: "https://www.classicandsportscar.com/sites/default/files/styles/slideshow_slide/public/2018-03/01_designers_favourite_cars_mercedes_300sl.png"},
-    { id: 2, src: "https://www.classicandsportscar.com/sites/default/files/styles/slideshow_slide/public/2018-03/12_designers_favourite_cars_lamborghini_countach.png"},
-    { id: 3, src: "https://www.classicandsportscar.com/sites/default/files/styles/slideshow_slide/public/2018-03/11_designers_favourite_cars_dino_206s.png"},
-    { id: 4, src: "https://www.classicandsportscar.com/sites/default/files/styles/slideshow_slide/public/2018-03/10_designers_favourite_cars_cord_810_812.png"},
-    { id: 5, src: "https://www.classicandsportscar.com/sites/default/files/styles/slideshow_slide/public/2018-03/19_designers_favourite_cars_ford_GT40.png"},
-    { id: 6, src: "https://www.classicandsportscar.com/sites/default/files/styles/slideshow_slide/public/2018-03/02_designers_favourite_cars_Ferrari_P3_4.png"},
-    { id: 7, src: "https://www.classicandsportscar.com/sites/default/files/styles/slideshow_slide/public/2018-03/00_designers_favourite_cars_lead.png"},
-    { id: 8, src: "https://www.classicandsportscar.com/sites/default/files/styles/slideshow_slide/public/2018-03/20_designers_favourite_cars_hispano.png"},
+    { id: 1, src: "https://upload.wikimedia.org/wikipedia/commons/e/ea/2018_Mazda6_Sport_NAV%2B_Diesel_2.2_Front.jpg"},
+    { id: 2, src: "https://i.pinimg.com/736x/0c/65/e3/0c65e39c227b3faff63d40d5a35f82f5.jpg"},
+    { id: 3, src: "https://cdn.modera.org/resized/3000x2000/s/a0fba38b-2a69-417b-a924-f422aac51ca3/web/usedcars/69e206f68ee37"},
+    { id: 4, src: "https://content.deal-drive.com/images/c2601760521e6f2b99a5affa3be5333e85f7b713aded5cab4d0b595363b43a90.jpg"},
+    { id: 5, src: "https://mzauto.ee/wp-content/uploads/2021/10/vaz1.jpg"},
+    { id: 6, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf2JGx3IiL_pxoIGyH-10KFOhPFMSfR3ob3A&s"},
+    { id: 7, src: "https://img13.img-bcg.eu/h32/3ca0eb/s1/v2/205311974.jpg"},
+    { id: 8, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNEplKrrOv32FIpHGQrbNbt7oPJ-ifbhUoQA&s"},
 ];
 
 

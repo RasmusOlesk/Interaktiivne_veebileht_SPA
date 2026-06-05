@@ -1,14 +1,16 @@
 html {
-  scrollbar-gutter: stable; /* arvestab scrollbar ruumiga, et vältida lehe hüplemist */
+  scrollbar-gutter: stable;
 }
 
 body {
-  font-family: Arial;
-  background: hsl(0, 0%, 9%);
-  color: hsl(0, 0%, 80%);
-  margin: 0;  /* muudab vaikimisi margini 0'i */
+  font-family: "Courier New", monospace;
+  background: black;
+  color: #00ff41;
+  margin: 0;
+  text-shadow: 0 0 8px #00ff41;
 }
 
+/* Center root content */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -16,16 +18,20 @@ body {
   text-align: center;
 }
 
-.container header, .card {
+/* Matrix container + cards */
+.container header,
+.card {
   text-align: center;
-  margin: auto;  /* paigutab konteineri keskele */
+  margin: auto;
   margin-bottom: 25px;
-  background: hsl(0, 0%, 12%);
-  padding: 10px;  /* lisab konteineri piiri ja sisu vahele vahe */
-  border-radius: 10px;  /* seab konteineri nurkade raadiust, teeb nurgad ümaraks */
-  box-shadow: 2px 15px 15px hsl(0, 0%, 23%);
+  background: rgba(0, 20, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #00ff41;
+  box-shadow: 0 0 20px #00ff41;
 }
 
+/* Navigation */
 nav li {
   display: inline;
   margin: 10px;
@@ -36,16 +42,30 @@ nav button {
   margin: 0;
 }
 
+/* Buttons */
 button {
-  padding: 5px 10px;
-  border: none;
-  background-color: #444;
-  color: #fff;
+  padding: 8px 14px;
+  border: 1px solid #00ff41;
+  background: transparent;
+  color: #00ff41;
   cursor: pointer;
   border-radius: 6px;
   margin: 4px;
+  font-family: "Courier New", monospace;
+  transition: 0.2s ease;
+  text-shadow: 0 0 6px #00ff41;
 }
 
 button:hover {
-  background-Color: hsl(211, 75%, 75%);
+  background-color: #00ff41;
+  color: black;
+  box-shadow: 0 0 15px #00ff41;
+}
+
+/* Optional: Matrix scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
 }

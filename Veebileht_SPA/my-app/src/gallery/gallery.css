@@ -4,11 +4,16 @@
     overflow: hidden;
 }
 
+/* Gallery frame with Matrix glow */
 .gallery {
     position: relative;
     height: 400px;
+    border: 1px solid #00ff41;
+    box-shadow: 0 0 20px #00ff41;
+    background: rgba(0, 20, 0, 0.4);
 }
 
+/* Base image styling */
 .image {
     position: absolute;
     top: 50%;
@@ -16,29 +21,43 @@
     max-width: 100%;
     max-height: 80%;
     object-fit: cover;
-    transition: transform 1s ease, opacity 1s, z-index 1s;
     cursor: pointer;
+
+    /* Matrix glow */
+    filter: brightness(0.85) drop-shadow(0 0 10px #00ff41);
+
+    /* Smooth transitions */
+    transition: transform 1s ease, opacity 1s, z-index 1s;
     transform: translate(-50%, -50%);
 }
 
+/* Active (center) image */
 .image.active {
     transform: translate(-50%, -50%) translateX(0) scale(1) rotateY(0deg);
     z-index: 3;
     opacity: 1;
+    filter: brightness(1) drop-shadow(0 0 15px #00ff41);
 }
 
+/* Left image */
 .image.prev {
-    transform: translate(-50%, -50%) perspective(1500px) translateX(clamp(-80%, -35vw, -20px)) scale(0.5) rotateY(50deg);
+    transform: translate(-50%, -50%) perspective(1500px)
+               translateX(clamp(-80%, -35vw, -20px))
+               scale(0.5) rotateY(50deg);
     z-index: 2;
     opacity: 0.4;
 }
 
+/* Right image */
 .image.next {
-    transform: translate(-50%, -50%) perspective(1500px) translateX(clamp(20%, 35vw, 80%)) scale(0.5) rotateY(-50deg);
+    transform: translate(-50%, -50%) perspective(1500px)
+               translateX(clamp(20%, 35vw, 80%))
+               scale(0.5) rotateY(-50deg);
     z-index: 2;
     opacity: 0.4;
 }
 
+/* Hidden states */
 .image.hidden {
     opacity: 0;
     z-index: 1;
@@ -58,10 +77,14 @@
     opacity: 0;
 }
 
+/* Hover effects */
 .image.active.ready:hover {
-     transform: translate(-50%, -50%) translateX(0) scale(1.1);
+    transform: translate(-50%, -50%) translateX(0) scale(1.1);
+    filter: brightness(1.2) drop-shadow(0 0 20px #00ff41);
 }
 
-.image.next:hover, .image.prev:hover {
+.image.next:hover,
+.image.prev:hover {
     opacity: 0.7;
+    filter: brightness(1) drop-shadow(0 0 12px #00ff41);
 }

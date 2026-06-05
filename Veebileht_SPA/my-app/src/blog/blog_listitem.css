@@ -1,35 +1,83 @@
+/* MATRIX THEME — neon green, dark background, digital glow */
+
+body {
+    background-color: #000;
+    color: #00ff41;
+    font-family: "Courier New", monospace;
+}
+
+/* Remove bullets, tighten spacing */
 .post-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
+/* Card-like items with glowing borders */
 .post-item {
     display: flex;
     justify-content: space-between;
-    padding: 8px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #00ff41;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px #00ff41;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card.post-item {
-    cursor: pointer
+    cursor: pointer;
 }
 
+/* Hover effect: stronger glow */
+.post-item:hover {
+    background: rgba(0, 20, 0, 0.8);
+    box-shadow: 0 0 20px #00ff41;
+}
+
+/* Images: glitchy zoom + green tint */
 .post-item img {
     max-block-size: 100px;
-    transition: transform 1s ease;
-}
-
-.post-item span {
-    width: 70%;
-}
-
-.like {
-    width: 50px;
-}
-
-.post-item.favorite .like {
-    color: gold;
+    transition: transform 1s ease, filter 0.5s ease;
+    filter: hue-rotate(90deg) brightness(1.4);
 }
 
 .post-item img:hover {
     transform: translateX(150%) scale(4);
+    filter: hue-rotate(90deg) brightness(2);
+}
+
+/* Text area */
+.post-item span {
+    width: 70%;
+    color: #00ff41;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+/* Like icon */
+.like {
+    width: 50px;
+    color: #008f2f;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Favorite state: golden glow */
+.post-item.favorite .like {
+    color: #d4af37;
+    text-shadow: 0 0 10px #d4af37;
+}
+
+/* Optional: subtle falling code animation behind items */
+.post-item::before {
+    content: "010101010101";
+    position: absolute;
+    opacity: 0.05;
+    font-size: 12px;
+    animation: rain 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rain {
+    0% { transform: translateY(-20px); }
+    100% { transform: translateY(20px); }
 }
