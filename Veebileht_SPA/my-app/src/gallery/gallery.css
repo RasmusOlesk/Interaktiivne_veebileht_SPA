@@ -1,0 +1,67 @@
+.gallery-container {
+    margin: auto;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.gallery {
+    position: relative;
+    height: 400px;
+}
+
+.image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 100%;
+    max-height: 80%;
+    object-fit: cover;
+    transition: transform 1s ease, opacity 1s, z-index 1s;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.image.active {
+    transform: translate(-50%, -50%) translateX(0) scale(1) rotateY(0deg);
+    z-index: 3;
+    opacity: 1;
+}
+
+.image.prev {
+    transform: translate(-50%, -50%) perspective(1500px) translateX(clamp(-80%, -35vw, -20px)) scale(0.5) rotateY(50deg);
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.image.next {
+    transform: translate(-50%, -50%) perspective(1500px) translateX(clamp(20%, 35vw, 80%)) scale(0.5) rotateY(-50deg);
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.image.hidden {
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transform: translate(-50%, -50%) translateX(0) scale(0.1);
+}
+
+.image.nextHidden {
+    transform: translate(-50%, -50%) translateX(100%) scale(0.1) rotateY(-50deg);
+    z-index: 0;
+    opacity: 0;
+}
+
+.image.prevHidden {
+    transform: translate(-50%, -50%) translateX(-100%) scale(0.1) rotateY(50deg);
+    z-index: 0;
+    opacity: 0;
+}
+
+.image.active.ready:hover {
+     transform: translate(-50%, -50%) translateX(0) scale(1.1);
+}
+
+.image.next:hover, .image.prev:hover {
+    opacity: 0.7;
+}

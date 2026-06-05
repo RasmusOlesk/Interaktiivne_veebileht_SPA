@@ -1,0 +1,35 @@
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.card.post-item {
+    cursor: pointer
+}
+
+.post-item img {
+    max-block-size: 100px;
+    transition: transform 1s ease;
+}
+
+.post-item span {
+    width: 70%;
+}
+
+.like {
+    width: 50px;
+}
+
+.post-item.favorite .like {
+    color: gold;
+}
+
+.post-item img:hover {
+    transform: translateX(150%) scale(4);
+}

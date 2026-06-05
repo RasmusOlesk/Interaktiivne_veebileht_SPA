@@ -1,15 +1,51 @@
-:root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color-scheme: light dark;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+html {
+  scrollbar-gutter: stable; /* arvestab scrollbar ruumiga, et vältida lehe hüplemist */
 }
 
 body {
+  font-family: Arial;
+  background: hsl(0, 0%, 9%);
+  color: hsl(0, 0%, 80%);
+  margin: 0;  /* muudab vaikimisi margini 0'i */
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container header, .card {
+  text-align: center;
+  margin: auto;  /* paigutab konteineri keskele */
+  margin-bottom: 25px;
+  background: hsl(0, 0%, 12%);
+  padding: 10px;  /* lisab konteineri piiri ja sisu vahele vahe */
+  border-radius: 10px;  /* seab konteineri nurkade raadiust, teeb nurgad ümaraks */
+  box-shadow: 2px 15px 15px hsl(0, 0%, 23%);
+}
+
+nav li {
+  display: inline;
+  margin: 10px;
+}
+
+nav button {
+  padding: 10px 15px;
   margin: 0;
-  background: #0f172a;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 4px;
+}
+
+button:hover {
+  background-Color: hsl(211, 75%, 75%);
 }
