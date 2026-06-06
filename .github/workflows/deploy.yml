@@ -1,0 +1,36 @@
+name: Deploy Vite site
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Install dependencies
+        working-directory: Veebileht_SPA/my-app
+        run: npm install
+
+      - name: Build project
+        working-directory: Veebileht_SPA/my-app
+        run: npm run build
+
+      - name: Upload dist folder
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: Veebileht_SPA/my-app/dist
